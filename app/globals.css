@@ -1,0 +1,402 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   QURAN SHARIF - DESIGN SYSTEM
+   ============================================ */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Amiri:ital,wght@0,400;0,700;1,400&family=Scheherazade+New:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ============================================
+   CSS CUSTOM PROPERTIES
+   ============================================ */
+:root {
+  --background: 42 30% 96%;
+  --foreground: 30 10% 15%;
+  --card: 42 30% 96%;
+  --card-foreground: 30 10% 15%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 30 10% 15%;
+  --primary: 152 50% 22%;
+  --primary-foreground: 42 80% 90%;
+  --secondary: 42 30% 88%;
+  --secondary-foreground: 30 10% 20%;
+  --muted: 42 20% 90%;
+  --muted-foreground: 30 10% 45%;
+  --accent: 42 70% 70%;
+  --accent-foreground: 30 10% 15%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 42 25% 82%;
+  --input: 42 25% 82%;
+  --ring: 152 50% 22%;
+  --radius: 0.5rem;
+  --chart-1: 152 50% 35%;
+  --chart-2: 42 70% 55%;
+  --chart-3: 197 37% 35%;
+  --chart-4: 30 80% 55%;
+  --chart-5: 340 75% 55%;
+
+  /* Mushaf page variables */
+  --page-bg: #fdf8f0;
+  --page-text: #1a1209;
+  --page-meta: #7a6a50;
+  --page-gold: #8b6914;
+  --page-border: #c8a96e;
+  --page-translation: #4a5568;
+  --page-shadow: rgba(0, 0, 0, 0.15);
+
+  /* Reader background */
+  --reader-bg: #2d4a3e;
+}
+
+.dark {
+  --background: 22 15% 8%;
+  --foreground: 42 30% 92%;
+  --card: 22 15% 10%;
+  --card-foreground: 42 30% 92%;
+  --popover: 22 15% 10%;
+  --popover-foreground: 42 30% 92%;
+  --primary: 152 40% 55%;
+  --primary-foreground: 22 15% 8%;
+  --secondary: 22 15% 16%;
+  --secondary-foreground: 42 30% 85%;
+  --muted: 22 15% 16%;
+  --muted-foreground: 42 20% 55%;
+  --accent: 42 70% 55%;
+  --accent-foreground: 22 15% 8%;
+  --destructive: 0 62% 45%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 22 15% 20%;
+  --input: 22 15% 20%;
+  --ring: 152 40% 55%;
+  --chart-1: 152 50% 55%;
+  --chart-2: 42 70% 60%;
+  --chart-3: 197 37% 55%;
+  --chart-4: 30 80% 60%;
+  --chart-5: 340 75% 60%;
+
+  --page-bg: #1e1810;
+  --page-text: #e8d9b8;
+  --page-meta: #9a8a6a;
+  --page-gold: #d4a93a;
+  --page-border: #6b5030;
+  --page-translation: #9ab0b8;
+  --reader-bg: #121212;
+}
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+@layer base {
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Arabic font */
+  [dir="rtl"], .font-amiri, .quran-text {
+    font-family: 'Scheherazade New', 'Amiri Quran', 'Amiri', serif;
+  }
+
+  .font-amiri {
+    font-family: 'Scheherazade New', 'Amiri', serif;
+  }
+
+  .font-inter {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+/* ============================================
+   MUSHAF PAGE DESIGN
+   ============================================ */
+.mushaf-page {
+  background-color: var(--page-bg);
+  color: var(--page-text);
+  position: relative;
+  width: 100%;
+  aspect-ratio: 0.65 / 1;
+  overflow: hidden;
+  box-shadow:
+    inset 0 0 60px rgba(139, 105, 20, 0.08),
+    2px 0 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Outer ornamental border */
+.mushaf-border-outer {
+  border: 2px solid var(--page-border);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Inner border */
+.mushaf-border-inner {
+  border: 1px solid color-mix(in srgb, var(--page-border) 50%, transparent);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Corner ornaments */
+.mushaf-page::before,
+.mushaf-page::after {
+  content: '';
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Book shadow */
+.book-shadow {
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.4),
+    0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Book spine gradient */
+.book-spread {
+  min-height: calc(100vh - 14rem);
+  max-height: calc(100vh - 10rem);
+}
+
+/* ============================================
+   AYAH STYLING
+   ============================================ */
+.ayah-inline {
+  display: inline;
+  border-radius: 3px;
+  padding: 1px 2px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.ayah-inline:hover {
+  background-color: color-mix(in srgb, var(--page-gold) 12%, transparent);
+}
+
+.ayah-highlighted {
+  background-color: color-mix(in srgb, var(--page-gold) 20%, transparent) !important;
+  border-radius: 4px;
+}
+
+.ayah-playing {
+  background-color: color-mix(in srgb, #22c55e 20%, transparent) !important;
+  animation: pulse-green 2s ease-in-out infinite;
+}
+
+@keyframes pulse-green {
+  0%, 100% { background-color: color-mix(in srgb, #22c55e 15%, transparent); }
+  50% { background-color: color-mix(in srgb, #22c55e 30%, transparent); }
+}
+
+/* Ayah number */
+.ayah-number-marker {
+  font-family: 'Scheherazade New', serif;
+  font-size: 0.85em;
+  color: var(--page-gold);
+  vertical-align: middle;
+}
+
+/* ============================================
+   SURAH HEADER
+   ============================================ */
+.surah-header-box {
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--page-gold) 8%, var(--page-bg)) 0%,
+    var(--page-bg) 50%,
+    color-mix(in srgb, var(--page-gold) 8%, var(--page-bg)) 100%
+  );
+}
+
+/* ============================================
+   PAGE NUMBER ORNAMENT
+   ============================================ */
+.page-number-ornament {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 12px;
+  border: 1px solid color-mix(in srgb, var(--page-border) 60%, transparent);
+  border-radius: 20px;
+  background: color-mix(in srgb, var(--page-gold) 5%, transparent);
+}
+
+.page-number-ornament::before,
+.page-number-ornament::after {
+  content: '❋';
+  font-size: 8px;
+  color: var(--page-gold);
+  opacity: 0.7;
+}
+
+/* ============================================
+   READER BACKGROUND
+   ============================================ */
+.quran-reader-root {
+  background-color: var(--reader-bg);
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(45, 74, 62, 0.8) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(30, 50, 40, 0.6) 0%, transparent 50%),
+    linear-gradient(180deg, #1a3328 0%, #2d4a3e 100%);
+}
+
+.dark .quran-reader-root {
+  background-color: #0a0a0a;
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(20, 35, 28, 0.9) 0%, transparent 50%),
+    linear-gradient(180deg, #0a0a0a 0%, #111111 100%);
+}
+
+/* ============================================
+   NAVBAR BUTTONS
+   ============================================ */
+.navbar-btn {
+  @apply p-2 rounded-lg text-amber-300/70 hover:text-amber-200 hover:bg-emerald-800/50 transition-all duration-150;
+}
+
+/* ============================================
+   READER BG
+   ============================================ */
+.bg-reader-bg {
+  background-color: var(--reader-bg);
+}
+
+/* ============================================
+   PAGE ANIMATIONS
+   ============================================ */
+.page-flip-forward {
+  animation: flipForward 0.3s ease-out;
+}
+
+.page-flip-backward {
+  animation: flipBackward 0.3s ease-out;
+}
+
+@keyframes flipForward {
+  0% { opacity: 1; transform: translateX(0) rotateY(0); }
+  50% { opacity: 0.7; transform: translateX(-8px) rotateY(-5deg); }
+  100% { opacity: 1; transform: translateX(0) rotateY(0); }
+}
+
+@keyframes flipBackward {
+  0% { opacity: 1; transform: translateX(0) rotateY(0); }
+  50% { opacity: 0.7; transform: translateX(8px) rotateY(5deg); }
+  100% { opacity: 1; transform: translateX(0) rotateY(0); }
+}
+
+/* ============================================
+   SCROLLBAR STYLING
+   ============================================ */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--page-border) 60%, transparent);
+  border-radius: 4px;
+}
+
+/* ============================================
+   QURAN TEXT CONTAINER
+   ============================================ */
+.quran-text-container {
+  font-family: 'Scheherazade New', 'Amiri', serif;
+  direction: rtl;
+  text-align: justify;
+  word-spacing: 0.1em;
+}
+
+.ayah-text-block {
+  font-family: 'Scheherazade New', 'Amiri', serif;
+  direction: rtl;
+  text-align: justify;
+  line-height: 2.2;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  color: var(--page-text);
+}
+
+/* ============================================
+   AUDIO PLAYER
+   ============================================ */
+.audio-player {
+  will-change: height;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 1024px) {
+  .mushaf-page {
+    aspect-ratio: 0.7 / 1;
+    min-height: 70vh;
+    max-height: 82vh;
+  }
+
+  .book-spread {
+    min-height: auto;
+    max-height: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .mushaf-page {
+    min-height: 75vh;
+    max-height: 85vh;
+  }
+}
+
+/* ============================================
+   SURAH SEARCH HIGHLIGHT
+   ============================================ */
+mark, em {
+  background-color: color-mix(in srgb, var(--page-gold) 30%, transparent);
+  color: inherit;
+  font-style: normal;
+  border-radius: 2px;
+  padding: 0 1px;
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+@media print {
+  .reader-navbar,
+  .audio-player,
+  .nav-arrow,
+  .ayah-actions {
+    display: none !important;
+  }
+
+  .mushaf-page {
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+}
