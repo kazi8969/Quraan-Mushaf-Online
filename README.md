@@ -7,15 +7,15 @@ A modern, production-ready web application for reading the Holy Quran in authent
 ## Screenshots
 
 ### Landing Page — Beautiful Islamic Design with Surah Grid
-![Landing Page](./screenshots/1_(1).png)
+![Landing Page](.../screenshots/1_(1).png)
 *Welcome screen with all 114 Surahs, hero section, and quick navigation buttons*
 
 ### Quran Reader — Desktop Two-Page Mushaf Spread
-![Desktop Reader](./screenshots/1_(2).png)
+![Desktop Reader](.../screenshots/1_(2).png)
 *Authentic Mushaf experience with ornamental borders, Surah headers, full two-page spread view, and toolbar with search, bookmarks, audio, and settings*
 
 ### Quran Reader — Mobile Single Page with Audio Player
-![Mobile Reader](./screenshots/1_(3).png)
+![Mobile Reader](.../screenshots/1_(3).png)
 *Optimized mobile view showing a single page with Uthmani text, Juz marker, page number, and audio player controls at the bottom*
 
 ---
