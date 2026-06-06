@@ -30,7 +30,7 @@ A modern, production-ready web application for reading the Holy Quran in authent
 
 ## Live Demo
 
-**[https://quran-sharif.vercel.app](https://quran-sharif.vercel.app)**
+**[https://quran-sharif.vercel.app](https://quran-mushaf-web-app-o7ez.bolt.host)**
 
 > Replace with your deployed URL after deploying to Vercel, Netlify, or your preferred host.
 
