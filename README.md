@@ -6,33 +6,25 @@ A modern, production-ready web application for reading the Holy Quran in authent
 
 ## Screenshots
 
-### Landing Page
-![Landing Page](https://images.pexels.com/photos/6157052/pexels-photo-6157052.jpeg?auto=compress&cs=tinysrgb&w=1200)
-*Beautiful Islamic-themed landing page with surah grid and quick navigation*
+### Landing Page — Beautiful Islamic Design with Surah Grid
+![Landing Page](./screenshots/1_(1).png)
+*Welcome screen with all 114 Surahs, hero section, and quick navigation buttons*
 
-### Quran Reader — Desktop Two-Page Spread
-![Desktop Reader](https://images.pexels.com/photos/6157055/pexels-photo-6157055.jpeg?auto=compress&cs=tinysrgb&w=1200)
-*Authentic Mushaf experience with two-page spread on desktop*
+### Quran Reader — Desktop Two-Page Mushaf Spread
+![Desktop Reader](./screenshots/1_(2).png)
+*Authentic Mushaf experience with ornamental borders, Surah headers, full two-page spread view, and toolbar with search, bookmarks, audio, and settings*
 
-### Quran Reader — Mobile Single Page
-![Mobile Reader](https://images.pexels.com/photos/6157060/pexels-photo-6157060.jpeg?auto=compress&cs=tinysrgb&w=600)
-*Optimized single-page reading on mobile devices*
-
-### Search
-![Search Modal](https://images.pexels.com/photos/6157065/pexels-photo-6157065.jpeg?auto=compress&cs=tinysrgb&w=600)
-*Instant search across surah names, Arabic text, and ayah numbers*
-
-### Audio Player
-![Audio Player](https://images.pexels.com/photos/6157070/pexels-photo-6157070.jpeg?auto=compress&cs=tinysrgb&w=600)
-*Inline audio recitation with multiple reciters*
+### Quran Reader — Mobile Single Page with Audio Player
+![Mobile Reader](./screenshots/1_(3).png)
+*Optimized mobile view showing a single page with Uthmani text, Juz marker, page number, and audio player controls at the bottom*
 
 ---
 
 ## Live Demo
 
-**[https://quran-sharif.vercel.app](https://quran-mushaf-web-app-o7ez.bolt.host)**
+**[https://quran-mushaf-web-app-o7ez.bolt.host](https://quran-mushaf-web-app-o7ez.bolt.host)**
 
-> Replace with your deployed URL after deploying to Vercel, Netlify, or your preferred host.
+Live and ready to use! Full Quran Sharif with all features including search, audio recitation, translations, bookmarks, and more.
 
 ---
 
