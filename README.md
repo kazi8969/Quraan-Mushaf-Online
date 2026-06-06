@@ -7,7 +7,7 @@ A modern, production-ready web application for reading the Holy Quran in authent
 ## Screenshots
 
 ### Landing Page — Beautiful Islamic Design with Surah Grid
-![Landing Page](.../screenshots/1_(1).png)
+![Landing Page]([.../screenshots/1_(1).png](https://github.com/kazi8969/Quraan-Mushaf-Online/blob/main/screenshots/1%20(1).png))
 *Welcome screen with all 114 Surahs, hero section, and quick navigation buttons*
 
 ### Quran Reader — Desktop Two-Page Mushaf Spread
